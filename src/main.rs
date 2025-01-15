@@ -9,7 +9,6 @@ use rustscan::scanner::Scanner;
 use rustscan::scripts::{init_scripts, Script, ScriptFile};
 use rustscan::{detail, funny_opening, output, warning};
 
-use colorful::{Color, Colorful};
 use futures::executor::block_on;
 use std::collections::HashMap;
 use std::net::IpAddr;
@@ -195,18 +194,6 @@ fn main() {
 #[allow(clippy::items_after_statements, clippy::needless_raw_string_hashes)]
 fn print_opening(opts: &Opts) {
     debug!("Printing opening");
-    let s = r#".----. .-. .-. .----..---.  .----. .---.   .--.  .-. .-.
-| {}  }| { } |{ {__ {_   _}{ {__  /  ___} / {} \ |  `| |
-| .-. \| {_} |.-._} } | |  .-._} }\     }/  /\  \| |\  |
-`-' `-'`-----'`----'  `-'  `----'  `---' `-'  `-'`-' `-'
-The Modern Day Port Scanner."#;
-
-    println!("{}", s.gradient(Color::Green).bold());
-    let info = r#"________________________________________
-: http://discord.skerritt.blog         :
-: https://github.com/RustScan/RustScan :
- --------------------------------------"#;
-    println!("{}", info.gradient(Color::Yellow).bold());
     funny_opening!();
 
     let config_path = opts
