@@ -7,7 +7,7 @@ use rustscan::input::{self, Config, Opts, ScriptsRequired};
 use rustscan::port_strategy::PortStrategy;
 use rustscan::scanner::Scanner;
 use rustscan::scripts::{init_scripts, Script, ScriptFile};
-use rustscan::{detail, funny_opening, output, warning};
+use rustscan::{detail, output, warning};
 
 use futures::executor::block_on;
 use std::collections::HashMap;
@@ -194,7 +194,6 @@ fn main() {
 #[allow(clippy::items_after_statements, clippy::needless_raw_string_hashes)]
 fn print_opening(opts: &Opts) {
     debug!("Printing opening");
-    funny_opening!();
 
     let config_path = opts
         .config_path
